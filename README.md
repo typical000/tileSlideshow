@@ -1,7 +1,7 @@
 # tileSlideshow
 Simple jQuery-based random slideshow plugin
 
-For more information see [DEMO](http://example.net/)
+For more information see [DEMO](http://typical000.github.io/tileSlideshow)
 
 Setup
 -----
