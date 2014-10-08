@@ -1,0 +1,246 @@
+// ---------------------------------------------------------------------------------------------------------------------
+// Content section. All related to content is placed here
+// ---------------------------------------------------------------------------------------------------------------------
+
+.container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+
+.section,
+.section-inner {
+  position: relative;
+}
+
+.section-inner {
+  & > .container {
+    position: static;
+  }
+}
+
+// ---------------------------------------------------------------------------------------------------------------------
+
+.section {
+  &.section-odd {
+    background: $color-white;
+  }
+  &.section-even {
+    background: $color-grey-light;
+    code,
+    pre {
+      background: $color-white;
+    }
+  }
+
+  .section-title {
+    padding-left: 28px;
+    border-left: 2px solid $color-grey-lighten;
+    margin-bottom: 30px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    line-height: 40px;
+  }
+}
+
+#options {
+  padding-bottom: 30px;
+}
+
+#browser {
+  padding-bottom: 30px;
+}
+
+#download {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  .btn {
+    margin: 0 10px;
+    padding: 10px 20px;
+  }
+}
+
+#promo {
+  position: relative;
+  background: $color-black;
+  &:after {
+    content: "";
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 20;
+    display: block;
+    position: absolute;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABZJREFUeNpiEhER+Q8EDIwgAgQAAgwASrgHOQubZ70AAAAASUVORK5CYII=);
+    @include opacity(0.3);
+  }
+}
+
+#container-promo {
+  opacity: 0.7 !important;
+  .tile-item {
+    width: 5%;
+    padding-bottom: 5%;
+    padding-bottom: 5%;
+  }
+}
+
+.tile-caption {
+  z-index: 25;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  .tile-caption-inner {
+    float: left;
+    padding: 15px 30px;
+    @include white(0.8);
+    padding-left: 10029px;
+    margin-left: -9999px;
+    * {
+      margin: 0;
+    }
+    h1 {
+      font-size: 32px;
+    }
+    h2 {
+      @include text;
+      font-size: 18px;
+      font-weight: 300;
+
+    }
+  }
+}
+
+// ---------------------------------------------------------------------------------------------------------------------
+
+code,
+pre {
+  font-size: 13px;
+  border: 1px solid #ccc;
+  padding: 6px 10px;
+  line-height: 18px;
+  margin-bottom: 20px;
+  font-family: "Consolas", "Monaco", "Courier", monospace;
+  color: #666;
+  background: #f8f8f8;
+  border-radius: 3px;
+}
+
+code {
+  padding: 2px 5px;
+}
+
+// ---------------------------------------------------------------------------------------------------------------------
+
+.setup-item {
+  margin-bottom: 30px;
+  .setup-title {
+    padding-left: 30px;
+    margin-bottom: 30px;
+    span {
+      color: $color-grey-lighten;
+      padding-right: 15px;
+    }
+  }
+}
+
+// ---------------------------------------------------------------------------------------------------------------------
+
+#main-container {
+  padding-top: 50px;
+}
+
+
+
+.block-container {
+  margin: 0;
+  width: 300px;
+  border: 1px solid #ddd;
+  padding: 1px;
+  .tile-item {
+    @include box-sizing(border-box);
+    width: 33.3%;
+    padding-bottom: 33.3%;
+    border: 1px solid #eee;
+  }
+
+}
+
+.example-item {
+  overflow: hidden;
+  height: 100%;
+  clear: both;
+  margin-bottom: 30px;
+  &.first,
+  &:first-child {
+    border-top: none;
+    padding-top: 0;
+  }
+  padding-top: 30px;
+  border-top: 1px solid $color-grey-light;
+  h3 {
+    padding-left: 30px;
+    margin-bottom: 30px;
+    span {
+      color: $color-grey-lighten;
+      padding-right: 15px;
+    }
+  }
+}
+
+
+
+.example-wide {
+  .example-left {
+    margin-right: 450px;
+  }
+}
+
+.example-left {
+  margin-right: 350px;
+}
+
+.example-right {
+  float: right;
+}
+
+.tile-stamp {
+  width: 49.5%;
+  @include box-sizing(border-box);
+  padding-bottom: 24.5%;
+  margin: 1px;
+  background: #f8f8f8;
+  border: 1px solid #ccc;
+  text-align: center;
+  position: relative;
+  float: left;
+  overflow: hidden;
+}
+.tile-stamp {
+  & > div {
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    top: 10px;
+    font-size: 12px;
+    h4 {
+      font-size: 16px;
+      margin: 10px 0;
+    }
+    p {
+      line-height: normal;
+      margin: 0;
+    }
+  }
+}
+
+#container-animate {
+  width: 400px;
+}
+#container-animate .tile-item {
+  width: 25%;
+  padding-bottom: 25%;
+}

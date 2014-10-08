@@ -1,0 +1,74 @@
+// ---------------------------------------------------------------------------------------------------------------------
+// Header section. All related to header is placed here
+// ---------------------------------------------------------------------------------------------------------------------
+
+#section-header {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 50px;
+  background: $color-black-l;
+  color: $color-white;
+  font-size: 16px;
+  letter-spacing: 0;
+  z-index: 50;
+}
+
+.logo {
+  padding: 17px 15px;
+  float: left;
+  background: $color-black;
+  img {
+    display: block;
+  }
+}
+
+.fork-on-github {
+  margin-left: 15px;
+  padding: 0 15px;
+  color: $color-white !important;
+  text-decoration: none !important;
+  float: right;
+  text-decoration: none;
+  line-height: 50px;
+  background: $color-black-l;
+  &:hover {
+    padding-top: 10px;
+    background: $color-black;
+  }
+}
+
+.icon-fork {
+  display: inline-block;
+  width: 11px;
+  height: 15px;
+  background: url(../images/icon_fork.png) no-repeat 0 0;
+}
+.icon-github {
+  display: inline-block;
+  width: 56px;
+  height: 15px;
+  background: url(../images/icon_github.png) no-repeat 0 0;
+}
+
+.menu {
+  @include reset-list;
+  float: right;
+  li {
+    float: left;
+    a {
+      padding: 0 15px;
+      line-height: 50px;
+      color: $color-white;
+      text-decoration: none !important;
+      display: block;
+      background: $color-black-l;
+      &:hover {
+        padding-top: 10px;
+        background: $color-black;
+        color: $color-white;
+      }
+    }
+  }
+}

@@ -1,0 +1,1180 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width">
+
+  <title>tileSlideshow | jQuery plugin</title>
+
+  <!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <!-- Add latest jQuery -->
+  <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+  <link rel="stylesheet" href="css/application.css"/>
+  <link rel="stylesheet" href="tileSlideshow.css"/>
+
+  <script type="text/javascript" src="tileSlideshow.min.js"></script>
+
+  <script type="text/javascript">
+    (function ($) {
+
+      $(document).ready(function () {
+        var $body = $('html, body');
+        $mainMenu = $('.menu');
+
+        $mainMenu.on('click', 'a', function (e) {
+          e.preventDefault();
+
+          var targetID = $(this).attr('href'),
+                  offset = 50;
+          $body.animate({
+            scrollTop:$(targetID).offset().top - offset
+          }, 1000);
+        });
+      });
+
+      $(window).load(function () {
+        $('#container-promo').tileSlideshow({
+          animation:'randomMove',
+          animationSpeed:1000,
+          selector:'.tile-item',
+          itemsPerInterval:10,
+          interval:3000
+        });
+
+        $('#container-animate').tileSlideshow({
+          animation:'randomMove',
+          animationSpeed:1000,
+          selector:'.tile-item',
+          itemsPerInterval:2,
+          interval:1000
+        });
+
+        $('#container-stamp').tileSlideshow();
+
+        $('#container-helpers').tileSlideshow({
+          interval:1000,
+          itemsPerInterval:8
+        });
+        $('#btn-switch').on('click', function () {
+          $('#container-helpers').tileSlideshow('switchItems');
+        });
+        $('#btn-play').on('click', function () {
+          $('#container-helpers').tileSlideshow('play');
+        });
+        $('#btn-stop').on('click', function () {
+          $('#container-helpers').tileSlideshow('stop');
+        });
+      });
+    })(jQuery);
+
+  </script>
+
+</head>
+<body>
+
+<div id="section-header">
+  <div class="container">
+    <div class="logo">
+      <img src="images/logo.png" alt="tileSlideshow"/>
+    </div>
+    <a class="fork-on-github" href="http://example.net/">
+      <i class="icon icon-fork"></i>
+      fork on
+      <i class="icon icon-github"></i>
+    </a>
+    <ul class="menu">
+      <li><a href="#how-to-use">How to use</a></li>
+      <li><a href="#options">Options</a></li>
+      <li><a href="#examples">Examples</a></li>
+      <li><a href="http://example.net/">Download</a></li>
+    </ul>
+  </div>
+</div>
+
+<div id="main-container">
+
+<section class="section" id="promo">
+<div class="tile-container" id="container-promo">
+<div class="tile-item">
+  <img src="images/asset_1.jpg" alt=""/>
+  <img src="images/asset_5.jpg" alt=""/>
+  <img src="images/asset_0.jpg" alt=""/>
+  <img src="images/asset_2.jpg" alt=""/>
+  <img src="images/asset_3.jpg" alt=""/>
+</div>
+<div class="tile-item">
+  <img src="images/asset_8.jpg" alt=""/>
+  <img src="images/asset_9.jpg" alt=""/>
+  <img src="images/asset_10.jpg" alt=""/>
+  <img src="images/asset_1.jpg" alt=""/>
+  <img src="images/asset_6.jpg" alt=""/>
+</div>
+<div class="tile-item">
+  <img src="images/asset_5.jpg" alt=""/>
+  <img src="images/asset_2.jpg" alt=""/>
+  <img src="images/asset_0.jpg" alt=""/>
+  <img src="images/asset_7.jpg" alt=""/>
+  <img src="images/asset_8.jpg" alt=""/>
+</div>
+<div class="tile-item">
+  <img src="images/asset_5.jpg" alt=""/>
+  <img src="images/asset_6.jpg" alt=""/>
+  <img src="images/asset_7.jpg" alt=""/>
+  <img src="images/asset_8.jpg" alt=""/>
+  <img src="images/asset_9.jpg" alt=""/>
+</div>
+<div class="tile-item">
+  <img src="images/asset_2.jpg" alt=""/>
+  <img src="images/asset_3.jpg" alt=""/>
+  <img src="images/asset_4.jpg" alt=""/>
+  <img src="images/asset_5.jpg" alt=""/>
+  <img src="images/asset_6.jpg" alt=""/>
+</div>
+<div class="tile-item">
+  <img src="images/asset_0.jpg" alt=""/>
+  <img src="images/asset_1.jpg" alt=""/>
+  <img src="images/asset_2.jpg" alt=""/>
+  <img src="images/asset_3.jpg" alt=""/>
+  <img src="images/asset_4.jpg" alt=""/>
+</div>
+<div class="tile-item">
+  <img src="images/asset_1.jpg" alt=""/>
+  <img src="images/asset_5.jpg" alt=""/>
+  <img src="images/asset_0.jpg" alt=""/>
+  <img src="images/asset_2.jpg" alt=""/>
+  <img src="images/asset_3.jpg" alt=""/>
+</div>
+<div class="tile-item">
+  <img src="images/asset_8.jpg" alt=""/>
+  <img src="images/asset_9.jpg" alt=""/>
+  <img src="images/asset_10.jpg" alt=""/>
+  <img src="images/asset_1.jpg" alt=""/>
+  <img src="images/asset_6.jpg" alt=""/>
+</div>
+<div class="tile-item">
+  <img src="images/asset_5.jpg" alt=""/>
+  <img src="images/asset_2.jpg" alt=""/>
+  <img src="images/asset_0.jpg" alt=""/>
+  <img src="images/asset_7.jpg" alt=""/>
+  <img src="images/asset_8.jpg" alt=""/>
+</div>
+<div class="tile-item">
+  <img src="images/asset_5.jpg" alt=""/>
+  <img src="images/asset_6.jpg" alt=""/>
+  <img src="images/asset_7.jpg" alt=""/>
+  <img src="images/asset_8.jpg" alt=""/>
+  <img src="images/asset_9.jpg" alt=""/>
+</div>
+<div class="tile-item">
+  <img src="images/asset_2.jpg" alt=""/>
+  <img src="images/asset_3.jpg" alt=""/>
+  <img src="images/asset_4.jpg" alt=""/>
+  <img src="images/asset_5.jpg" alt=""/>
+  <img src="images/asset_6.jpg" alt=""/>
+</div>
+<div class="tile-item">
+  <img src="images/asset_6.jpg" alt=""/>
+  <img src="images/asset_2.jpg" alt=""/>
+  <img src="images/asset_0.jpg" alt=""/>
+  <img src="images/asset_9.jpg" alt=""/>
+  <img src="images/asset_10.jpg" alt=""/>
+</div>
+<div class="tile-item">
+  <img src="images/asset_4.jpg" alt=""/>
+  <img src="images/asset_3.jpg" alt=""/>
+  <img src="images/asset_2.jpg" alt=""/>
+  <img src="images/asset_1.jpg" alt=""/>
+  <img src="images/asset_0.jpg" alt=""/>
+</div>
+<div class="tile-item">
+  <img src="images/asset_10.jpg" alt=""/>
+  <img src="images/asset_9.jpg" alt=""/>
+  <img src="images/asset_8.jpg" alt=""/>
+  <img src="images/asset_7.jpg" alt=""/>
+  <img src="images/asset_6.jpg" alt=""/>
+</div>
+<div class="tile-item">
+  <img src="images/asset_0.jpg" alt=""/>
+  <img src="images/asset_1.jpg" alt=""/>
+  <img src="images/asset_2.jpg" alt=""/>
+  <img src="images/asset_3.jpg" alt=""/>
+  <img src="images/asset_4.jpg" alt=""/>
+</div>
+<div class="tile-item">
+  <img src="images/asset_1.jpg" alt=""/>
+  <img src="images/asset_5.jpg" alt=""/>
+  <img src="images/asset_0.jpg" alt=""/>
+  <img src="images/asset_2.jpg" alt=""/>
+  <img src="images/asset_3.jpg" alt=""/>
+</div>
+<div class="tile-item">
+  <img src="images/asset_8.jpg" alt=""/>
+  <img src="images/asset_9.jpg" alt=""/>
+  <img src="images/asset_10.jpg" alt=""/>
+  <img src="images/asset_1.jpg" alt=""/>
+  <img src="images/asset_6.jpg" alt=""/>
+</div>
+<div class="tile-item">
+  <img src="images/asset_5.jpg" alt=""/>
+  <img src="images/asset_2.jpg" alt=""/>
+  <img src="images/asset_0.jpg" alt=""/>
+  <img src="images/asset_7.jpg" alt=""/>
+  <img src="images/asset_8.jpg" alt=""/>
+</div>
+<div class="tile-item">
+  <img src="images/asset_5.jpg" alt=""/>
+  <img src="images/asset_6.jpg" alt=""/>
+  <img src="images/asset_7.jpg" alt=""/>
+  <img src="images/asset_8.jpg" alt=""/>
+  <img src="images/asset_9.jpg" alt=""/>
+</div>
+<div class="tile-item">
+  <img src="images/asset_2.jpg" alt=""/>
+  <img src="images/asset_3.jpg" alt=""/>
+  <img src="images/asset_4.jpg" alt=""/>
+  <img src="images/asset_5.jpg" alt=""/>
+  <img src="images/asset_6.jpg" alt=""/>
+</div>
+<div class="tile-item">
+  <img src="images/asset_0.jpg" alt=""/>
+  <img src="images/asset_1.jpg" alt=""/>
+  <img src="images/asset_2.jpg" alt=""/>
+  <img src="images/asset_3.jpg" alt=""/>
+  <img src="images/asset_4.jpg" alt=""/>
+</div>
+<div class="tile-item">
+  <img src="images/asset_1.jpg" alt=""/>
+  <img src="images/asset_5.jpg" alt=""/>
+  <img src="images/asset_0.jpg" alt=""/>
+  <img src="images/asset_2.jpg" alt=""/>
+  <img src="images/asset_3.jpg" alt=""/>
+</div>
+<div class="tile-item">
+  <img src="images/asset_8.jpg" alt=""/>
+  <img src="images/asset_9.jpg" alt=""/>
+  <img src="images/asset_10.jpg" alt=""/>
+  <img src="images/asset_1.jpg" alt=""/>
+  <img src="images/asset_6.jpg" alt=""/>
+</div>
+<div class="tile-item">
+  <img src="images/asset_5.jpg" alt=""/>
+  <img src="images/asset_2.jpg" alt=""/>
+  <img src="images/asset_0.jpg" alt=""/>
+  <img src="images/asset_7.jpg" alt=""/>
+  <img src="images/asset_8.jpg" alt=""/>
+</div>
+<div class="tile-item">
+  <img src="images/asset_5.jpg" alt=""/>
+  <img src="images/asset_6.jpg" alt=""/>
+  <img src="images/asset_7.jpg" alt=""/>
+  <img src="images/asset_8.jpg" alt=""/>
+  <img src="images/asset_9.jpg" alt=""/>
+</div>
+<div class="tile-item">
+  <img src="images/asset_2.jpg" alt=""/>
+  <img src="images/asset_3.jpg" alt=""/>
+  <img src="images/asset_4.jpg" alt=""/>
+  <img src="images/asset_5.jpg" alt=""/>
+  <img src="images/asset_6.jpg" alt=""/>
+</div>
+<div class="tile-item">
+  <img src="images/asset_6.jpg" alt=""/>
+  <img src="images/asset_2.jpg" alt=""/>
+  <img src="images/asset_0.jpg" alt=""/>
+  <img src="images/asset_9.jpg" alt=""/>
+  <img src="images/asset_10.jpg" alt=""/>
+</div>
+<div class="tile-item">
+  <img src="images/asset_4.jpg" alt=""/>
+  <img src="images/asset_3.jpg" alt=""/>
+  <img src="images/asset_2.jpg" alt=""/>
+  <img src="images/asset_1.jpg" alt=""/>
+  <img src="images/asset_0.jpg" alt=""/>
+</div>
+<div class="tile-item">
+  <img src="images/asset_10.jpg" alt=""/>
+  <img src="images/asset_9.jpg" alt=""/>
+  <img src="images/asset_8.jpg" alt=""/>
+  <img src="images/asset_7.jpg" alt=""/>
+  <img src="images/asset_6.jpg" alt=""/>
+</div>
+<div class="tile-item">
+  <img src="images/asset_0.jpg" alt=""/>
+  <img src="images/asset_1.jpg" alt=""/>
+  <img src="images/asset_2.jpg" alt=""/>
+  <img src="images/asset_3.jpg" alt=""/>
+  <img src="images/asset_4.jpg" alt=""/>
+</div>
+<div class="tile-item">
+  <img src="images/asset_1.jpg" alt=""/>
+  <img src="images/asset_5.jpg" alt=""/>
+  <img src="images/asset_0.jpg" alt=""/>
+  <img src="images/asset_2.jpg" alt=""/>
+  <img src="images/asset_3.jpg" alt=""/>
+</div>
+<div class="tile-item">
+  <img src="images/asset_8.jpg" alt=""/>
+  <img src="images/asset_9.jpg" alt=""/>
+  <img src="images/asset_10.jpg" alt=""/>
+  <img src="images/asset_1.jpg" alt=""/>
+  <img src="images/asset_6.jpg" alt=""/>
+</div>
+<div class="tile-item">
+  <img src="images/asset_5.jpg" alt=""/>
+  <img src="images/asset_2.jpg" alt=""/>
+  <img src="images/asset_0.jpg" alt=""/>
+  <img src="images/asset_7.jpg" alt=""/>
+  <img src="images/asset_8.jpg" alt=""/>
+</div>
+<div class="tile-item">
+  <img src="images/asset_5.jpg" alt=""/>
+  <img src="images/asset_6.jpg" alt=""/>
+  <img src="images/asset_7.jpg" alt=""/>
+  <img src="images/asset_8.jpg" alt=""/>
+  <img src="images/asset_9.jpg" alt=""/>
+</div>
+<div class="tile-item">
+  <img src="images/asset_2.jpg" alt=""/>
+  <img src="images/asset_3.jpg" alt=""/>
+  <img src="images/asset_4.jpg" alt=""/>
+  <img src="images/asset_5.jpg" alt=""/>
+  <img src="images/asset_6.jpg" alt=""/>
+</div>
+<div class="tile-item">
+  <img src="images/asset_0.jpg" alt=""/>
+  <img src="images/asset_1.jpg" alt=""/>
+  <img src="images/asset_2.jpg" alt=""/>
+  <img src="images/asset_3.jpg" alt=""/>
+  <img src="images/asset_4.jpg" alt=""/>
+</div>
+<div class="tile-item">
+  <img src="images/asset_1.jpg" alt=""/>
+  <img src="images/asset_5.jpg" alt=""/>
+  <img src="images/asset_0.jpg" alt=""/>
+  <img src="images/asset_2.jpg" alt=""/>
+  <img src="images/asset_3.jpg" alt=""/>
+</div>
+<div class="tile-item">
+  <img src="images/asset_8.jpg" alt=""/>
+  <img src="images/asset_9.jpg" alt=""/>
+  <img src="images/asset_10.jpg" alt=""/>
+  <img src="images/asset_1.jpg" alt=""/>
+  <img src="images/asset_6.jpg" alt=""/>
+</div>
+<div class="tile-item">
+  <img src="images/asset_5.jpg" alt=""/>
+  <img src="images/asset_2.jpg" alt=""/>
+  <img src="images/asset_0.jpg" alt=""/>
+  <img src="images/asset_7.jpg" alt=""/>
+  <img src="images/asset_8.jpg" alt=""/>
+</div>
+<div class="tile-item">
+  <img src="images/asset_5.jpg" alt=""/>
+  <img src="images/asset_6.jpg" alt=""/>
+  <img src="images/asset_7.jpg" alt=""/>
+  <img src="images/asset_8.jpg" alt=""/>
+  <img src="images/asset_9.jpg" alt=""/>
+</div>
+<div class="tile-item">
+  <img src="images/asset_2.jpg" alt=""/>
+  <img src="images/asset_3.jpg" alt=""/>
+  <img src="images/asset_4.jpg" alt=""/>
+  <img src="images/asset_5.jpg" alt=""/>
+  <img src="images/asset_6.jpg" alt=""/>
+</div>
+<div class="tile-item">
+  <img src="images/asset_6.jpg" alt=""/>
+  <img src="images/asset_2.jpg" alt=""/>
+  <img src="images/asset_0.jpg" alt=""/>
+  <img src="images/asset_9.jpg" alt=""/>
+  <img src="images/asset_10.jpg" alt=""/>
+</div>
+<div class="tile-item">
+  <img src="images/asset_4.jpg" alt=""/>
+  <img src="images/asset_3.jpg" alt=""/>
+  <img src="images/asset_2.jpg" alt=""/>
+  <img src="images/asset_1.jpg" alt=""/>
+  <img src="images/asset_0.jpg" alt=""/>
+</div>
+<div class="tile-item">
+  <img src="images/asset_10.jpg" alt=""/>
+  <img src="images/asset_9.jpg" alt=""/>
+  <img src="images/asset_8.jpg" alt=""/>
+  <img src="images/asset_7.jpg" alt=""/>
+  <img src="images/asset_6.jpg" alt=""/>
+</div>
+<div class="tile-item">
+  <img src="images/asset_0.jpg" alt=""/>
+  <img src="images/asset_1.jpg" alt=""/>
+  <img src="images/asset_2.jpg" alt=""/>
+  <img src="images/asset_3.jpg" alt=""/>
+  <img src="images/asset_4.jpg" alt=""/>
+</div>
+<div class="tile-item">
+  <img src="images/asset_1.jpg" alt=""/>
+  <img src="images/asset_5.jpg" alt=""/>
+  <img src="images/asset_0.jpg" alt=""/>
+  <img src="images/asset_2.jpg" alt=""/>
+  <img src="images/asset_3.jpg" alt=""/>
+</div>
+<div class="tile-item">
+  <img src="images/asset_8.jpg" alt=""/>
+  <img src="images/asset_9.jpg" alt=""/>
+  <img src="images/asset_10.jpg" alt=""/>
+  <img src="images/asset_1.jpg" alt=""/>
+  <img src="images/asset_6.jpg" alt=""/>
+</div>
+<div class="tile-item">
+  <img src="images/asset_5.jpg" alt=""/>
+  <img src="images/asset_2.jpg" alt=""/>
+  <img src="images/asset_0.jpg" alt=""/>
+  <img src="images/asset_7.jpg" alt=""/>
+  <img src="images/asset_8.jpg" alt=""/>
+</div>
+<div class="tile-item">
+  <img src="images/asset_5.jpg" alt=""/>
+  <img src="images/asset_6.jpg" alt=""/>
+  <img src="images/asset_7.jpg" alt=""/>
+  <img src="images/asset_8.jpg" alt=""/>
+  <img src="images/asset_9.jpg" alt=""/>
+</div>
+<div class="tile-item">
+  <img src="images/asset_2.jpg" alt=""/>
+  <img src="images/asset_3.jpg" alt=""/>
+  <img src="images/asset_4.jpg" alt=""/>
+  <img src="images/asset_5.jpg" alt=""/>
+  <img src="images/asset_6.jpg" alt=""/>
+</div>
+<div class="tile-item">
+  <img src="images/asset_0.jpg" alt=""/>
+  <img src="images/asset_1.jpg" alt=""/>
+  <img src="images/asset_2.jpg" alt=""/>
+  <img src="images/asset_3.jpg" alt=""/>
+  <img src="images/asset_4.jpg" alt=""/>
+</div>
+<div class="tile-item">
+  <img src="images/asset_1.jpg" alt=""/>
+  <img src="images/asset_5.jpg" alt=""/>
+  <img src="images/asset_0.jpg" alt=""/>
+  <img src="images/asset_2.jpg" alt=""/>
+  <img src="images/asset_3.jpg" alt=""/>
+</div>
+<div class="tile-item">
+  <img src="images/asset_8.jpg" alt=""/>
+  <img src="images/asset_9.jpg" alt=""/>
+  <img src="images/asset_10.jpg" alt=""/>
+  <img src="images/asset_1.jpg" alt=""/>
+  <img src="images/asset_6.jpg" alt=""/>
+</div>
+<div class="tile-item">
+  <img src="images/asset_5.jpg" alt=""/>
+  <img src="images/asset_2.jpg" alt=""/>
+  <img src="images/asset_0.jpg" alt=""/>
+  <img src="images/asset_7.jpg" alt=""/>
+  <img src="images/asset_8.jpg" alt=""/>
+</div>
+<div class="tile-item">
+  <img src="images/asset_5.jpg" alt=""/>
+  <img src="images/asset_6.jpg" alt=""/>
+  <img src="images/asset_7.jpg" alt=""/>
+  <img src="images/asset_8.jpg" alt=""/>
+  <img src="images/asset_9.jpg" alt=""/>
+</div>
+<div class="tile-item">
+  <img src="images/asset_2.jpg" alt=""/>
+  <img src="images/asset_3.jpg" alt=""/>
+  <img src="images/asset_4.jpg" alt=""/>
+  <img src="images/asset_5.jpg" alt=""/>
+  <img src="images/asset_6.jpg" alt=""/>
+</div>
+<div class="tile-item">
+  <img src="images/asset_6.jpg" alt=""/>
+  <img src="images/asset_2.jpg" alt=""/>
+  <img src="images/asset_0.jpg" alt=""/>
+  <img src="images/asset_9.jpg" alt=""/>
+  <img src="images/asset_10.jpg" alt=""/>
+</div>
+<div class="tile-item">
+  <img src="images/asset_4.jpg" alt=""/>
+  <img src="images/asset_3.jpg" alt=""/>
+  <img src="images/asset_2.jpg" alt=""/>
+  <img src="images/asset_1.jpg" alt=""/>
+  <img src="images/asset_0.jpg" alt=""/>
+</div>
+<div class="tile-item">
+  <img src="images/asset_10.jpg" alt=""/>
+  <img src="images/asset_9.jpg" alt=""/>
+  <img src="images/asset_8.jpg" alt=""/>
+  <img src="images/asset_7.jpg" alt=""/>
+  <img src="images/asset_6.jpg" alt=""/>
+</div>
+<div class="tile-item">
+  <img src="images/asset_0.jpg" alt=""/>
+  <img src="images/asset_1.jpg" alt=""/>
+  <img src="images/asset_2.jpg" alt=""/>
+  <img src="images/asset_3.jpg" alt=""/>
+  <img src="images/asset_4.jpg" alt=""/>
+</div>
+<div class="tile-item">
+  <img src="images/asset_1.jpg" alt=""/>
+  <img src="images/asset_5.jpg" alt=""/>
+  <img src="images/asset_0.jpg" alt=""/>
+  <img src="images/asset_2.jpg" alt=""/>
+  <img src="images/asset_3.jpg" alt=""/>
+</div>
+<div class="tile-item">
+  <img src="images/asset_8.jpg" alt=""/>
+  <img src="images/asset_9.jpg" alt=""/>
+  <img src="images/asset_10.jpg" alt=""/>
+  <img src="images/asset_1.jpg" alt=""/>
+  <img src="images/asset_6.jpg" alt=""/>
+</div>
+<div class="tile-item">
+  <img src="images/asset_5.jpg" alt=""/>
+  <img src="images/asset_2.jpg" alt=""/>
+  <img src="images/asset_0.jpg" alt=""/>
+  <img src="images/asset_7.jpg" alt=""/>
+  <img src="images/asset_8.jpg" alt=""/>
+</div>
+<div class="tile-item">
+  <img src="images/asset_5.jpg" alt=""/>
+  <img src="images/asset_6.jpg" alt=""/>
+  <img src="images/asset_7.jpg" alt=""/>
+  <img src="images/asset_8.jpg" alt=""/>
+  <img src="images/asset_9.jpg" alt=""/>
+</div>
+<div class="tile-item">
+  <img src="images/asset_2.jpg" alt=""/>
+  <img src="images/asset_3.jpg" alt=""/>
+  <img src="images/asset_4.jpg" alt=""/>
+  <img src="images/asset_5.jpg" alt=""/>
+  <img src="images/asset_6.jpg" alt=""/>
+</div>
+<div class="tile-item">
+  <img src="images/asset_0.jpg" alt=""/>
+  <img src="images/asset_1.jpg" alt=""/>
+  <img src="images/asset_2.jpg" alt=""/>
+  <img src="images/asset_3.jpg" alt=""/>
+  <img src="images/asset_4.jpg" alt=""/>
+</div>
+<div class="tile-item">
+  <img src="images/asset_1.jpg" alt=""/>
+  <img src="images/asset_5.jpg" alt=""/>
+  <img src="images/asset_0.jpg" alt=""/>
+  <img src="images/asset_2.jpg" alt=""/>
+  <img src="images/asset_3.jpg" alt=""/>
+</div>
+<div class="tile-item">
+  <img src="images/asset_8.jpg" alt=""/>
+  <img src="images/asset_9.jpg" alt=""/>
+  <img src="images/asset_10.jpg" alt=""/>
+  <img src="images/asset_1.jpg" alt=""/>
+  <img src="images/asset_6.jpg" alt=""/>
+</div>
+<div class="tile-item">
+  <img src="images/asset_5.jpg" alt=""/>
+  <img src="images/asset_2.jpg" alt=""/>
+  <img src="images/asset_0.jpg" alt=""/>
+  <img src="images/asset_7.jpg" alt=""/>
+  <img src="images/asset_8.jpg" alt=""/>
+</div>
+<div class="tile-item">
+  <img src="images/asset_5.jpg" alt=""/>
+  <img src="images/asset_6.jpg" alt=""/>
+  <img src="images/asset_7.jpg" alt=""/>
+  <img src="images/asset_8.jpg" alt=""/>
+  <img src="images/asset_9.jpg" alt=""/>
+</div>
+<div class="tile-item">
+  <img src="images/asset_2.jpg" alt=""/>
+  <img src="images/asset_3.jpg" alt=""/>
+  <img src="images/asset_4.jpg" alt=""/>
+  <img src="images/asset_5.jpg" alt=""/>
+  <img src="images/asset_6.jpg" alt=""/>
+</div>
+<div class="tile-item">
+  <img src="images/asset_6.jpg" alt=""/>
+  <img src="images/asset_2.jpg" alt=""/>
+  <img src="images/asset_0.jpg" alt=""/>
+  <img src="images/asset_9.jpg" alt=""/>
+  <img src="images/asset_10.jpg" alt=""/>
+</div>
+<div class="tile-item">
+  <img src="images/asset_4.jpg" alt=""/>
+  <img src="images/asset_3.jpg" alt=""/>
+  <img src="images/asset_2.jpg" alt=""/>
+  <img src="images/asset_1.jpg" alt=""/>
+  <img src="images/asset_0.jpg" alt=""/>
+</div>
+<div class="tile-item">
+  <img src="images/asset_10.jpg" alt=""/>
+  <img src="images/asset_9.jpg" alt=""/>
+  <img src="images/asset_8.jpg" alt=""/>
+  <img src="images/asset_7.jpg" alt=""/>
+  <img src="images/asset_6.jpg" alt=""/>
+</div>
+<div class="tile-item">
+  <img src="images/asset_0.jpg" alt=""/>
+  <img src="images/asset_1.jpg" alt=""/>
+  <img src="images/asset_2.jpg" alt=""/>
+  <img src="images/asset_3.jpg" alt=""/>
+  <img src="images/asset_4.jpg" alt=""/>
+</div>
+<div class="tile-item">
+  <img src="images/asset_1.jpg" alt=""/>
+  <img src="images/asset_5.jpg" alt=""/>
+  <img src="images/asset_0.jpg" alt=""/>
+  <img src="images/asset_2.jpg" alt=""/>
+  <img src="images/asset_3.jpg" alt=""/>
+</div>
+<div class="tile-item">
+  <img src="images/asset_8.jpg" alt=""/>
+  <img src="images/asset_9.jpg" alt=""/>
+  <img src="images/asset_10.jpg" alt=""/>
+  <img src="images/asset_1.jpg" alt=""/>
+  <img src="images/asset_6.jpg" alt=""/>
+</div>
+<div class="tile-item">
+  <img src="images/asset_5.jpg" alt=""/>
+  <img src="images/asset_2.jpg" alt=""/>
+  <img src="images/asset_0.jpg" alt=""/>
+  <img src="images/asset_7.jpg" alt=""/>
+  <img src="images/asset_8.jpg" alt=""/>
+</div>
+<div class="tile-item">
+  <img src="images/asset_5.jpg" alt=""/>
+  <img src="images/asset_6.jpg" alt=""/>
+  <img src="images/asset_7.jpg" alt=""/>
+  <img src="images/asset_8.jpg" alt=""/>
+  <img src="images/asset_9.jpg" alt=""/>
+</div>
+<div class="tile-item">
+  <img src="images/asset_2.jpg" alt=""/>
+  <img src="images/asset_3.jpg" alt=""/>
+  <img src="images/asset_4.jpg" alt=""/>
+  <img src="images/asset_5.jpg" alt=""/>
+  <img src="images/asset_6.jpg" alt=""/>
+</div>
+</div>
+<div class="tile-caption">
+  <div class="container">
+    <div class="tile-caption-inner">
+      <h1>tileSlideshow</h1>
+
+      <h2>Simple jQuery-based random slideshow plugin</h2>
+    </div>
+  </div>
+</div>
+</section>
+
+<section class="section section-odd" id="how-to-use">
+  <div class="container">
+    <h2 class="section-title">How to Use</h2>
+
+    <div class="setup-item">
+      <h3 class="setup-title"><span>1.</span> Setup</h3>
+
+      <p>
+        Add this tags to the <code>&lt;head&gt;</code> of your document (or before the <code>&lt;/body&gt;</code> tag).
+        This will link jQuery, Tile Slideshow CSS\JS into your web-page.
+      </p>
+          <pre>
+&lt;script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="jquery.tileSlideshow.js"&gt;&lt;/script&gt;
+&lt;link rel="stylesheet" type="text/css" href="tileSlideshow.css"/&gt;</pre>
+    </div>
+
+    <div class="setup-item">
+      <h3 class="setup-title"><span>2.</span> Markup</h3>
+
+      <p>
+        Start with a single containing element, in this example is <code>&lt;div class="tile-container"&gt;</code>.
+        After, create a list of items (blocks) with the same class (In this example there are <code>&lt;div
+        class="tile-item"&gt;</code>).
+      </p>
+
+      <p>
+        Inside each item insert inner element that will be switched (slided) in given interval (in our example there are
+        just <code>&lt;img&gt;</code> tags. Buy you can use any html tag you need).
+      </p>
+          <pre>
+&lt;div class="tile-container"&gt;
+  &lt;div class="tile-item"&gt;
+    &lt;img src="#" alt=""/&gt;
+    &lt;img src="#" alt=""/&gt;
+    &lt;img src="#" alt=""/&gt;
+  &lt;/div>
+  ...
+  &lt;div class="tile-item"&gt;
+    &lt;img src="#" alt=""/&gt;
+    &lt;img src="#" alt=""/&gt;
+    &lt;img src="#" alt=""/&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+    </div>
+
+    <div class="setup-item">
+      <h3 class="setup-title"><span>3.</span> Start the slideshow</h3>
+
+      <p>
+        In last step, add the following lines of JavaScript into the <code>&lt;head&gt;</code> of your document (or
+        before the <code>&lt;/body&gt;</code> tag).
+      </p>
+
+      <p>
+        The <code>$(window).load()</code> function is required to ensure the content of the page is loaded before the
+        plugin initializes
+      </p>
+          <pre>
+&lt;script type="text/javascript" charset="utf-8"&gt;
+  $(window).load(function() {
+    $('.tile-container').tileSlideshow();
+  });
+&lt;/script&gt;</pre>
+
+    </div>
+
+    <div class="setup-item">
+      <h3 class="setup-title"><span>4.</span> Change CSS to your needs</h3>
+
+      <p>
+        After all, take <code>tileSlideshow.css</code> and modify it to your needs, because this plugn was build as more
+        independent from CSS as it can be. You can change anything according to your future website design,
+        except <code>overflow</code>, <code>opacity</code> and <code>z-index</code> parameters.
+      </p>
+
+    </div>
+
+
+  </div>
+</section>
+
+<section class="section section-even" id="options">
+  <div class="container">
+    <h2 class="section-title">Options</h2>
+
+    <p>Listed below are all of the options available to customize tileSlideshow to suite your needs.</p>
+
+        <pre>
+animation: 'fade'        // Animation type. Supported values: 'fade', 'moveUp', 'moveDown', 'moveLeft', 'moveRight'
+animationSpeed: 500,     // Speed of switch for slided elements
+selector: '.tile-item',  // Selector for items that contain sliding images/items
+innerSelector: 'img',    // Selector for inner items that will be slided in given interval
+itemsPerInterval: 1,     // Number of random container that will be slided in given interval
+interval: 1000,          // Interval of time</pre>
+
+    <p>Also, slideshow is accessible from any point of code vie jQuery <code>.data()</code> method. For example:</p>
+    <pre>$('#container-helpers').data('tileSlideshow').stop();</pre>
+
+    <p>All this functions are listed below:</p>
+    <ol>
+      <li>switchItems</li>
+      <li>play</li>
+      <li>stop</li>
+      <li>destroy</li>
+    </ol>
+    <p>
+      Helper strings have been added too for performing quick actions on slideshow. All this helper strings are listed
+      below:
+    </p>
+        <pre>
+$('.tile-container').tileSlideshow('switchItems');
+$('.tile-container').tileSlideshow('play');
+$('.tile-container').tileSlideshow('stop');
+$('.tile-container').tileSlideshow('destroy');</pre>
+  </div>
+</section>
+
+<section class="section section-odd" id="examples">
+<div class="container">
+<h2 class="section-title">Examples</h2>
+
+<div class="example-item first">
+  <div class="example-right">
+    <div class="tile-container block-container" id="container-stamp">
+      <div class="tile-item">
+        <img src="images/asset_0.jpg" alt=""/>
+        <img src="images/asset_1.jpg" alt=""/>
+        <img src="images/asset_2.jpg" alt=""/>
+        <img src="images/asset_3.jpg" alt=""/>
+        <img src="images/asset_4.jpg" alt=""/>
+      </div>
+      <div class="tile-item">
+        <img src="images/asset_1.jpg" alt=""/>
+        <img src="images/asset_5.jpg" alt=""/>
+        <img src="images/asset_0.jpg" alt=""/>
+        <img src="images/asset_2.jpg" alt=""/>
+        <img src="images/asset_3.jpg" alt=""/>
+      </div>
+      <div class="tile-item">
+        <img src="images/asset_8.jpg" alt=""/>
+        <img src="images/asset_9.jpg" alt=""/>
+        <img src="images/asset_10.jpg" alt=""/>
+        <img src="images/asset_1.jpg" alt=""/>
+        <img src="images/asset_6.jpg" alt=""/>
+      </div>
+      <div class="tile-item">
+        <img src="images/asset_5.jpg" alt=""/>
+        <img src="images/asset_2.jpg" alt=""/>
+        <img src="images/asset_0.jpg" alt=""/>
+        <img src="images/asset_7.jpg" alt=""/>
+        <img src="images/asset_8.jpg" alt=""/>
+      </div>
+      <div class="tile-item">
+        <img src="images/asset_5.jpg" alt=""/>
+        <img src="images/asset_6.jpg" alt=""/>
+        <img src="images/asset_7.jpg" alt=""/>
+        <img src="images/asset_8.jpg" alt=""/>
+        <img src="images/asset_9.jpg" alt=""/>
+      </div>
+      <div class="tile-item">
+        <img src="images/asset_2.jpg" alt=""/>
+        <img src="images/asset_3.jpg" alt=""/>
+        <img src="images/asset_4.jpg" alt=""/>
+        <img src="images/asset_5.jpg" alt=""/>
+        <img src="images/asset_6.jpg" alt=""/>
+      </div>
+      <div class="tile-item">
+        <img src="images/asset_6.jpg" alt=""/>
+        <img src="images/asset_2.jpg" alt=""/>
+        <img src="images/asset_0.jpg" alt=""/>
+        <img src="images/asset_9.jpg" alt=""/>
+        <img src="images/asset_10.jpg" alt=""/>
+      </div>
+      <div class="tile-item">
+        <img src="images/asset_4.jpg" alt=""/>
+        <img src="images/asset_3.jpg" alt=""/>
+        <img src="images/asset_2.jpg" alt=""/>
+        <img src="images/asset_1.jpg" alt=""/>
+        <img src="images/asset_0.jpg" alt=""/>
+      </div>
+      <div class="tile-item">
+        <img src="images/asset_10.jpg" alt=""/>
+        <img src="images/asset_9.jpg" alt=""/>
+        <img src="images/asset_8.jpg" alt=""/>
+        <img src="images/asset_7.jpg" alt=""/>
+        <img src="images/asset_6.jpg" alt=""/>
+      </div>
+    </div>
+  </div>
+  <div class="example-left">
+    <h3><span>1.</span> Basic example</h3>
+
+    <p>Fun with options. Change animation type, change how much items will be slided in one time frame, change animation
+      time frame and fade speed</p>
+
+            <pre>
+$(window).load(function(){
+  $('#container-animate').tileSlideshow({
+    animation: 'randomMove',
+    animationSpeed: 1000,
+    itemsPerInterval: 2,
+    interval: 1000
+  });
+});</pre>
+  </div>
+</div>
+
+<div class="example-item example-wide">
+  <div class="example-right">
+    <div class="tile-container block-container" id="container-animate">
+      <div class="tile-item">
+        <img src="images/asset_0.jpg" alt=""/>
+        <img src="images/asset_1.jpg" alt=""/>
+        <img src="images/asset_2.jpg" alt=""/>
+        <img src="images/asset_3.jpg" alt=""/>
+        <img src="images/asset_4.jpg" alt=""/>
+      </div>
+      <div class="tile-item">
+        <img src="images/asset_1.jpg" alt=""/>
+        <img src="images/asset_5.jpg" alt=""/>
+        <img src="images/asset_0.jpg" alt=""/>
+        <img src="images/asset_2.jpg" alt=""/>
+        <img src="images/asset_3.jpg" alt=""/>
+      </div>
+      <div class="tile-item">
+        <img src="images/asset_8.jpg" alt=""/>
+        <img src="images/asset_9.jpg" alt=""/>
+        <img src="images/asset_10.jpg" alt=""/>
+        <img src="images/asset_1.jpg" alt=""/>
+        <img src="images/asset_6.jpg" alt=""/>
+      </div>
+      <div class="tile-item">
+        <img src="images/asset_5.jpg" alt=""/>
+        <img src="images/asset_2.jpg" alt=""/>
+        <img src="images/asset_0.jpg" alt=""/>
+        <img src="images/asset_7.jpg" alt=""/>
+        <img src="images/asset_8.jpg" alt=""/>
+      </div>
+      <div class="tile-item">
+        <img src="images/asset_5.jpg" alt=""/>
+        <img src="images/asset_6.jpg" alt=""/>
+        <img src="images/asset_7.jpg" alt=""/>
+        <img src="images/asset_8.jpg" alt=""/>
+        <img src="images/asset_9.jpg" alt=""/>
+      </div>
+      <div class="tile-stamp stamp-2-1">
+        <div>
+          <h4>Some title</h4>
+
+          <p>Some content placed here... </p>
+        </div>
+      </div>
+      <div class="tile-item">
+        <img src="images/asset_2.jpg" alt=""/>
+        <img src="images/asset_3.jpg" alt=""/>
+        <img src="images/asset_4.jpg" alt=""/>
+        <img src="images/asset_5.jpg" alt=""/>
+        <img src="images/asset_6.jpg" alt=""/>
+      </div>
+      <div class="tile-item">
+        <img src="images/asset_6.jpg" alt=""/>
+        <img src="images/asset_2.jpg" alt=""/>
+        <img src="images/asset_0.jpg" alt=""/>
+        <img src="images/asset_9.jpg" alt=""/>
+        <img src="images/asset_10.jpg" alt=""/>
+      </div>
+      <div class="tile-item">
+        <img src="images/asset_4.jpg" alt=""/>
+        <img src="images/asset_3.jpg" alt=""/>
+        <img src="images/asset_2.jpg" alt=""/>
+        <img src="images/asset_1.jpg" alt=""/>
+        <img src="images/asset_0.jpg" alt=""/>
+      </div>
+      <div class="tile-item">
+        <img src="images/asset_0.jpg" alt=""/>
+        <img src="images/asset_1.jpg" alt=""/>
+        <img src="images/asset_2.jpg" alt=""/>
+        <img src="images/asset_3.jpg" alt=""/>
+        <img src="images/asset_4.jpg" alt=""/>
+      </div>
+      <div class="tile-item">
+        <img src="images/asset_10.jpg" alt=""/>
+        <img src="images/asset_9.jpg" alt=""/>
+        <img src="images/asset_8.jpg" alt=""/>
+        <img src="images/asset_7.jpg" alt=""/>
+        <img src="images/asset_6.jpg" alt=""/>
+      </div>
+    </div>
+  </div>
+  <div class="example-left">
+    <h3><span>2.</span> Container with static blocks</h3>
+
+    <p>There is no problems with creating slideshows with "stamped" blocks. See example</p>
+
+    <p>No specific JavaScript or plugin initializations is needed. Anything is created only with CSS and HTML</p>
+  </div>
+</div>
+
+<div class="example-item">
+  <div class="example-right">
+    <div class="tile-container block-container" id="container-helpers">
+      <div class="tile-item">
+        <img src="images/asset_0.jpg" alt=""/>
+        <img src="images/asset_1.jpg" alt=""/>
+        <img src="images/asset_2.jpg" alt=""/>
+        <img src="images/asset_3.jpg" alt=""/>
+        <img src="images/asset_4.jpg" alt=""/>
+      </div>
+      <div class="tile-item">
+        <img src="images/asset_1.jpg" alt=""/>
+        <img src="images/asset_5.jpg" alt=""/>
+        <img src="images/asset_0.jpg" alt=""/>
+        <img src="images/asset_2.jpg" alt=""/>
+        <img src="images/asset_3.jpg" alt=""/>
+      </div>
+      <div class="tile-item">
+        <img src="images/asset_8.jpg" alt=""/>
+        <img src="images/asset_9.jpg" alt=""/>
+        <img src="images/asset_10.jpg" alt=""/>
+        <img src="images/asset_1.jpg" alt=""/>
+        <img src="images/asset_6.jpg" alt=""/>
+      </div>
+      <div class="tile-item">
+        <img src="images/asset_5.jpg" alt=""/>
+        <img src="images/asset_2.jpg" alt=""/>
+        <img src="images/asset_0.jpg" alt=""/>
+        <img src="images/asset_7.jpg" alt=""/>
+        <img src="images/asset_8.jpg" alt=""/>
+      </div>
+      <div class="tile-item">
+        <img src="images/asset_5.jpg" alt=""/>
+        <img src="images/asset_6.jpg" alt=""/>
+        <img src="images/asset_7.jpg" alt=""/>
+        <img src="images/asset_8.jpg" alt=""/>
+        <img src="images/asset_9.jpg" alt=""/>
+      </div>
+      <div class="tile-item">
+        <img src="images/asset_2.jpg" alt=""/>
+        <img src="images/asset_3.jpg" alt=""/>
+        <img src="images/asset_4.jpg" alt=""/>
+        <img src="images/asset_5.jpg" alt=""/>
+        <img src="images/asset_6.jpg" alt=""/>
+      </div>
+      <div class="tile-item">
+        <img src="images/asset_6.jpg" alt=""/>
+        <img src="images/asset_2.jpg" alt=""/>
+        <img src="images/asset_0.jpg" alt=""/>
+        <img src="images/asset_9.jpg" alt=""/>
+        <img src="images/asset_10.jpg" alt=""/>
+      </div>
+      <div class="tile-item">
+        <img src="images/asset_4.jpg" alt=""/>
+        <img src="images/asset_3.jpg" alt=""/>
+        <img src="images/asset_2.jpg" alt=""/>
+        <img src="images/asset_1.jpg" alt=""/>
+        <img src="images/asset_0.jpg" alt=""/>
+      </div>
+      <div class="tile-item">
+        <img src="images/asset_10.jpg" alt=""/>
+        <img src="images/asset_9.jpg" alt=""/>
+        <img src="images/asset_8.jpg" alt=""/>
+        <img src="images/asset_7.jpg" alt=""/>
+        <img src="images/asset_6.jpg" alt=""/>
+      </div>
+      <div class="tile-item">
+        <img src="images/asset_0.jpg" alt=""/>
+        <img src="images/asset_1.jpg" alt=""/>
+        <img src="images/asset_2.jpg" alt=""/>
+        <img src="images/asset_3.jpg" alt=""/>
+        <img src="images/asset_4.jpg" alt=""/>
+      </div>
+      <div class="tile-item">
+        <img src="images/asset_1.jpg" alt=""/>
+        <img src="images/asset_5.jpg" alt=""/>
+        <img src="images/asset_0.jpg" alt=""/>
+        <img src="images/asset_2.jpg" alt=""/>
+        <img src="images/asset_3.jpg" alt=""/>
+      </div>
+      <div class="tile-item">
+        <img src="images/asset_8.jpg" alt=""/>
+        <img src="images/asset_9.jpg" alt=""/>
+        <img src="images/asset_10.jpg" alt=""/>
+        <img src="images/asset_1.jpg" alt=""/>
+        <img src="images/asset_6.jpg" alt=""/>
+      </div>
+      <div class="tile-item">
+        <img src="images/asset_5.jpg" alt=""/>
+        <img src="images/asset_2.jpg" alt=""/>
+        <img src="images/asset_0.jpg" alt=""/>
+        <img src="images/asset_7.jpg" alt=""/>
+        <img src="images/asset_8.jpg" alt=""/>
+      </div>
+      <div class="tile-item">
+        <img src="images/asset_5.jpg" alt=""/>
+        <img src="images/asset_6.jpg" alt=""/>
+        <img src="images/asset_7.jpg" alt=""/>
+        <img src="images/asset_8.jpg" alt=""/>
+        <img src="images/asset_9.jpg" alt=""/>
+      </div>
+      <div class="tile-item">
+        <img src="images/asset_2.jpg" alt=""/>
+        <img src="images/asset_3.jpg" alt=""/>
+        <img src="images/asset_4.jpg" alt=""/>
+        <img src="images/asset_5.jpg" alt=""/>
+        <img src="images/asset_6.jpg" alt=""/>
+      </div>
+      <div class="tile-item">
+        <img src="images/asset_1.jpg" alt=""/>
+        <img src="images/asset_5.jpg" alt=""/>
+        <img src="images/asset_0.jpg" alt=""/>
+        <img src="images/asset_2.jpg" alt=""/>
+        <img src="images/asset_3.jpg" alt=""/>
+      </div>
+      <div class="tile-item">
+        <img src="images/asset_8.jpg" alt=""/>
+        <img src="images/asset_9.jpg" alt=""/>
+        <img src="images/asset_10.jpg" alt=""/>
+        <img src="images/asset_1.jpg" alt=""/>
+        <img src="images/asset_6.jpg" alt=""/>
+      </div>
+      <div class="tile-item">
+        <img src="images/asset_5.jpg" alt=""/>
+        <img src="images/asset_2.jpg" alt=""/>
+        <img src="images/asset_0.jpg" alt=""/>
+        <img src="images/asset_7.jpg" alt=""/>
+        <img src="images/asset_8.jpg" alt=""/>
+      </div>
+    </div>
+  </div>
+  <div class="example-left">
+    <h3><span>3.</span> Perform actions outside slideshow</h3>
+
+    <p>This example illustrates how to use helper stings on slideshow. Click on buttons under this text.</p>
+
+    <div class="helper-buttons">
+      <button class="btn" id="btn-switch">Switch items</button>
+      <button class="btn" id="btn-play">Play slideshow</button>
+      <button class="btn" id="btn-stop">Stop slideshow</button>
+    </div>
+    <p>Also, is available another option called 'destroy'. If you need totally revert all changes made by tileSlideshow
+      and destroy fully slider - call this action like other 3 actions, illustrated in this example. Anyway - see
+      code: </p>
+
+            <pre>
+$('#container-helpers').tileSlideshow({
+  itemsPerInterval: 8,
+  interval: 10000
+});
+
+// Call switch items function on click
+$('#btn-switch').on('click', function(){
+  $('#container-helpers').tileSlideshow('switchItems');
+});
+
+// Start slideshow
+$('#btn-play').on('click', function(){
+  $('#container-helpers').tileSlideshow('play');
+});
+
+// Stop slideshow function
+$('#btn-stop').on('click', function(){
+  $('#container-helpers').tileSlideshow('stop');
+});</pre>
+  </div>
+</div>
+</div>
+</section>
+<section class="section section-even" id="browser">
+  <div class="container">
+    <h2 class="section-title">Browser support</h2>
+
+    <p>All modern versions of Firefox, Chrome, Safari, iOS, Android, and Internet Explorer have been tested and are
+      supported.</p>
+
+    <p>It works fine in IE8 and IE7 too. But if you support this old browsers your soul will burn in hell :)</p>
+
+  </div>
+</section>
+<section class="section section-od" id="download">
+  <div class="container align-center">
+    <a class="btn btn-download" href="http://example.net/">Download</a>
+    or
+    <a class="btn btn-fork" href="http://example.net/">
+      <i class="icon icon-fork"></i>
+      fork on
+      <i class="icon icon-github"></i>
+    </a>
+  </div>
+</section>
+<footer id="section-footer">
+  <div class="container">
+    <span class="copyright">Created by <a href="https://github.com/typical000">Pavel Davydov</a></span>
+  </div>
+</footer>
+
+
+</div>
+</div>
+
+</body>
+</html>
+

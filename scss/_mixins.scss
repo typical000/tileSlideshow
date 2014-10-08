@@ -1,0 +1,235 @@
+// ---------------------------------------------------------------------------------------------------------------------
+// Custom mixin's
+// ---------------------------------------------------------------------------------------------------------------------
+
+// Animate mixin
+@mixin animate($animation, $duration:"1s", $transition:"linear", $iteration:"1", $direction:"normal", $delay:"0s") {
+  -webkit-animation-delay: $delay;
+  -webkit-animation-duration: $duration;
+  -webkit-animation-name: $animation;
+  -webkit-animation-timing-function: $transition;
+  -webkit-animation-fill-mode: forwards;
+  -webkit-animation-direction: $direction;
+  -webkit-animation-iteration-count: $iteration;
+
+  -moz-animation-delay: $delay;
+  -moz-animation-duration: $duration;
+  -moz-animation-name: $animation;
+  -moz-animation-timing-function: $transition;
+  -moz-animation-fill-mode: forwards; // this prevents the animation from restarting!
+  -moz-animation-direction: $direction;
+  -moz-animation-iteration-count: $iteration;
+
+  animation-delay: $delay;
+  animation-duration: $duration;
+  animation-name: $animation;
+  animation-timing-function: $transition;
+  animation-fill-mode: forwards;
+  animation-direction: $direction;
+  animation-iteration-count: $iteration;
+}
+
+// Keyframes mixin
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @-ms-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+// Base transition for anything
+@mixin base-transition {
+  @include transition(all $base-transition-time $base-transition-type);
+}
+@mixin no-transition {
+  @include transition(none);
+}
+
+@mixin user-select($value) {
+  -webkit-touch-callout: $value;
+  -webkit-user-select: $value;
+  -moz-user-select: $value;
+  -ms-user-select: $value;
+  user-select: $value;
+}
+
+// Clearfix
+@mixin clearfix {
+  zoom:1;
+  &:before, &:after {
+    content: "\0020";
+    display: block;
+    height: 0;
+    overflow: hidden;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+// Mixin for sprite
+@mixin add-sprite($name) {
+  height: icon-sprite-height($name);
+  width: icon-sprite-width($name);
+  @include icon-sprite($name);
+}
+
+// Mixin for black opacity
+@mixin black($number) {
+  background-color: $color-black;
+  background-color: rgba(0,0,0,$number);
+}
+
+// Mixin for white opacity
+@mixin white($number) {
+  background-color: $color-white;
+  background-color: rgba(255,255,255,$number);
+}
+
+// Mixin for title or text fonts (usefull in some cases :))
+@mixin text {
+  font-family: $base-font-text;
+}
+
+@mixin title {
+  font-family: $base-font-title;
+}
+
+// Mixin for element vertical align. As target serves selector of vertical aligned item
+// For more information, see:
+//   http://mystrd.at/tough-fucker-the-ultimate-css2-vertical-centering-monster/
+@mixin vertical-centered($target) {
+  font-size: 0;
+  letter-spacing: -1px;
+  &:before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    width: 0;
+    height: 100%;
+    min-height: inherit;
+    max-height: inherit;
+  }
+  #{$target} {
+    display: inline-block;
+    vertical-align: middle;
+    letter-spacing: normal;
+  }
+}
+
+// Remake compass Opacity mixin (with important label)
+@mixin opacity($opacity, $important: no) {
+  @if $important == isImportant {
+    opacity: $opacity !important;
+    $opacity-ie: $opacity * 100;
+    filter: alpha(opacity=$opacity-ie) !important; //IE8
+  }
+  @else {
+    opacity: $opacity;
+    $opacity-ie: $opacity * 100;
+    filter: alpha(opacity=$opacity-ie); //IE8
+  }
+}
+
+// Mixin for responsive images
+@mixin responsive-image {
+  max-width: 100%;
+  height: auto;
+}
+
+@mixin remove-responsive {
+  max-width: none;
+}
+
+// Remove fonts (sometimes is needed)
+@mixin no-font {
+  color: transparent;
+  font-size: 0;
+}
+
+// Overflow mixin (old usefull hack)
+@mixin overflow {
+  height: 100%;
+  overflow: hidden;
+}
+
+// Reset all inside element
+@mixin reset-inside {
+  * {
+    @include reset-box-model;
+  }
+}
+
+// IE7 inline-block fix
+@mixin ie7-inline-block {
+  *display: inline;
+  *zoom: 1;
+}
+
+// For the given property, use rem units with px as a fallback value for older
+// browsers.
+// $property - The css property name.
+// $values - The value (or space-separated list of values) for the property.
+// $use-px-fallback - Boolean, default: true; whether to use pixel fallback values
+@mixin rem($property, $values, $use-px-fallback: $rem-with-px-fallback) {
+// Create a couple of empty lists as output buffers.
+  $px-values: ();
+  $rem-values: ();
+// Ensure $values is a list.
+  @if type-of($values) != "list" {
+    $values: join((), $values);
+  }
+// Loop through the $values list
+  @each $value in $values {
+  // For each property value, if it's in rem or px, derive both rem and
+  // px values for it and add those to the end of the appropriate buffer.
+    @if(type-of($value) == number and not unitless($value) and (unit($value) == px or unit($value) == rem)) {
+      @if unit($value) == px {
+        $px-values: join($px-values, $value);
+        $rem-values: join($rem-values, px-to-rem($value));
+      }
+      @else {
+        $px-values: join($px-values, rem-to-px($value));
+        $rem-values: join($rem-values, $value);
+      }
+    }
+    @else {
+      $px-values: join($px-values, $value);
+      $rem-values: join($rem-values, $value);
+    }
+  }
+// Use pixel fallback for browsers that don't understand rem units.
+  @if $use-px-fallback {
+    #{$property}: $px-values;
+  }
+// Use rem values for everyone else (overrides pixel values).
+  #{$property}: $rem-values;
+}
+
+
+// Fully reset list
+@mixin reset-list {
+  list-style-type: none;
+  list-style-image: none;
+  margin: 0;
+  padding: 0;
+  li {
+    list-style-type: none;
+    list-style-image: none;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+
+
+
+

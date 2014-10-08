@@ -1,0 +1,14 @@
+// ---------------------------------------------------------------------------------------------------------------------
+// Footer section. All related to footer is placed here
+// ---------------------------------------------------------------------------------------------------------------------
+
+#section-footer {
+  background: $color-black-l;
+  font-size: 16px;
+  color: $color-white;
+  text-align: center;
+  padding: 20px 0;
+  a {
+    color: $color-white !important;
+  }
+}

@@ -1,0 +1,46 @@
+// ---------------------------------------------------------------------------------------------------------------------
+// Custom variables
+// ---------------------------------------------------------------------------------------------------------------------
+
+// Base variables for fonts
+// ---------------------------------------------------------------------------------------------------------------------
+$base-font-size: 14px;
+$base-font-line-height: 24px;
+
+$base-transition-time: 0.2s;
+$base-transition-type: linear;
+
+$base-border-radius: 0;
+
+$base-font-text: 'Open Sans', arial, serif;
+$base-font-title: 'Comfortaa', arial, serif;
+
+// Colors
+// ---------------------------------------------------------------------------------------------------------------------
+$color-black: #141414;
+$color-black-l: #1f1f1f;
+$color-grey: #444;
+$color-grey-lighten: #a3a3a3;
+$color-grey-light: #f3f3f3;
+$color-white: #fff;
+
+$page-bg: $color-white;
+
+$color-text: $color-black;
+$color-title: $color-black;
+
+$color-input: $color-white;
+$color-input-b: #868585;
+
+$color-placeholder: #a4a19f;
+
+// Link
+$color-link: #5b7fa6;
+$color-link-h: darken($color-link, 0.1);
+
+// Browser selection color
+// ---------------------------------------------------------------------------------------------------------------------
+$selection-bg:      $color-link !default;
+$selection-color:   invert($color-link) !default;
+
+

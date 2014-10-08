@@ -1,0 +1,159 @@
+// ---------------------------------------------------------------------------------------------------------------------
+// Common file for helpers
+// ---------------------------------------------------------------------------------------------------------------------
+
+.unstyled {
+  @include reset-list;
+}
+
+// Color helpers
+// ---------------------------------------------------------------------------------------------------------------------
+.black {
+  color: $color-black;
+}
+.grey {
+  color: $color-grey;
+}
+.white {
+  color: $color-white;
+}
+
+// Text alignment
+// ---------------------------------------------------------------------------------------------------------------------
+.align-left {
+  text-align: left !important;
+}
+
+.align-right {
+  text-align: right !important;
+}
+
+.align-center {
+  text-align: center !important;
+}
+
+.full-width {
+  width: 100% !important;
+}
+
+// Float alignment
+// ---------------------------------------------------------------------------------------------------------------------
+.float-left {
+  float: left !important;
+}
+
+.float-right {
+  float: right !important;
+}
+
+.float-center {
+  text-align: center !important;
+}
+
+// Clear
+// ---------------------------------------------------------------------------------------------------------------------
+.clear {
+  clear: both;
+}
+
+// Fixed on top or bottom
+// ---------------------------------------------------------------------------------------------------------------------
+.fixed-top,
+.fixed-bottom {
+  position: fixed !important;
+  right: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.fixed-top {
+  top: 0;
+}
+
+.fixed-bottom {
+  bottom: 0;
+}
+
+// Overflow
+// ---------------------------------------------------------------------------------------------------------------------
+.overflow {
+  @include overflow;
+}
+
+// Clearfix
+// ---------------------------------------------------------------------------------------------------------------------
+.clearfix {
+  @include clearfix;
+}
+
+//  Hidden elements
+// ---------------------------------------------------------------------------------------------------------------------
+.hidden {
+  display: none;
+  visibility: hidden;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+.hidden-item {
+  display: none;
+}
+
+// Col wrappers
+// ---------------------------------------------------------------------------------------------------------------------
+@for $i from 2 through 6 {
+  .col-#{$i}-wrapper {
+    clear: both;
+    text-align: center;
+    @include overflow;
+    .col {
+      width: 100%/$i;
+    }
+  }
+}
+
+.col {
+  float: left;
+}
+
+// Margins\Padding helpers
+// ---------------------------------------------------------------------------------------------------------------------
+$i: 5;
+@while $i < 35 {
+  // Magins
+  .m-t-#{$i} {
+    margin-top: $i + px;
+  }
+  .m-b-#{$i} {
+    margin-bottom: $i + px;
+  }
+  .m-l-#{$i} {
+    margin-left: $i + px;
+  }
+  .m-r-#{$i} {
+    margin-right: $i + px;
+  }
+  // Padding
+  .p-t-#{$i} {
+    padding-top: $i + px;
+  }
+  .p-b-#{$i} {
+    padding-bottom: $i + px;
+  }
+  .p-l-#{$i} {
+    padding-left: $i + px;
+  }
+  .p-r-#{$i} {
+    padding-right: $i + px;
+  }
+  $i: $i + 5;
+}
+
+// TODO helper
+// ---------------------------------------------------------------------------------------------------------------------
+.todo {
+  color: red;
+  font-weight: bold;
+}
