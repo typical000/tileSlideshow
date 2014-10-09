@@ -9,7 +9,7 @@ Add this tags to the `<head>` of your document (or before the `</body>` tag). Th
 
 ```html
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-<script type="text/javascript" src="jquery.tileSlideshow.js"></script>
+<script type="text/javascript" src="tileSlideshow.js"></script>
 <link rel="stylesheet" type="text/css" href="tileSlideshow.css" >
 ```
 

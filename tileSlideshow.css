@@ -1,5 +1,5 @@
 /*
- * jQuery tileSlideshow v1.0
+ * jQuery tileSlideshow v0.1.0
  * Copyright 2014 Pavel Davydov
  */
 
