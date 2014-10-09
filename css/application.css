@@ -2,7 +2,7 @@
 @import url(http://fonts.googleapis.com/css?family=Comfortaa:400,300&subset=latin,cyrillic);
 html { margin: 0; padding: 0; width: 100%; height: 100%; min-height: 100%; }
 
-body { padding: 0; margin: 0; font-size: 14px; line-height: 24px; font-weight: 300; font-family: "Open Sans", arial, serif; color: #444444; background: white; position: relative; min-width: 960px; }
+body { padding: 0; margin: 0; font-size: 14px; line-height: 24px; font-weight: 300; font-family: "Open Sans", arial, serif; color: #444; background: #fff; position: relative; min-width: 960px; }
 
 html { text-size-adjust: none !important; -webkit-text-size-adjust: none !important; }
 
@@ -27,7 +27,7 @@ h5 { font-size: 18px; }
 
 h6 { font-size: 16px; }
 
-a { -webkit-transition: all 0.2s linear; -moz-transition: all 0.2s linear; -o-transition: all 0.2s linear; transition: all 0.2s linear; color: #5b7fa6; text-decoration: none; }
+a { -moz-transition: all 0.2s linear; -o-transition: all 0.2s linear; -webkit-transition: all 0.2s linear; transition: all 0.2s linear; color: #5b7fa6; text-decoration: none; }
 a:visited { color: #5b7fa6; }
 a:hover { text-decoration: underline; color: #5b7fa6; }
 a:active { text-decoration: none; }
@@ -51,7 +51,7 @@ img { border: none; max-width: 100%; height: auto; }
 
 .placeholder { color: #a4a19f !important; }
 
-textarea, select, input[type="file"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"] { -webkit-transition: all 0.2s linear; -moz-transition: all 0.2s linear; -o-transition: all 0.2s linear; transition: all 0.2s linear; font-family: "Open Sans", arial, serif; border: none; border-bottom: 1px solid #868585; color: #141414; font-size: 18px; margin: 0; border-radius: 0; -webkit-appearance: none; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; outline: none !important; background: transparent; padding: 15px 0; box-shadow: none; letter-spacing: 2px; font-weight: 300; }
+textarea, select, input[type="file"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"] { -moz-transition: all 0.2s linear; -o-transition: all 0.2s linear; -webkit-transition: all 0.2s linear; transition: all 0.2s linear; font-family: "Open Sans", arial, serif; border: none; border-bottom: 1px solid #868585; color: #141414; font-size: 18px; margin: 0; border-radius: 0; -webkit-appearance: none; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; outline: none !important; background: transparent; padding: 15px 0; box-shadow: none; letter-spacing: 2px; font-weight: 300; }
 
 select { color: #a4a19f; }
 
@@ -63,7 +63,7 @@ textarea.input-short, select.input-short, input.input-short { width: 100px !impo
 
 textarea { height: auto; }
 
-.btn { -webkit-transition: all 0.2s linear; -moz-transition: all 0.2s linear; -o-transition: all 0.2s linear; transition: all 0.2s linear; display: inline-block; padding: 8px 15px; border: none; border-radius: 0; text-shadow: none; box-shadow: none; color: white !important; font-family: "Comfortaa", arial, serif; font-weight: 300; cursor: pointer; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; font-size: 18px; color: #2c2e32; text-decoration: none !important; outline: none !important; -webkit-backface-visibility: hidden; background: #1f1f1f; margin-right: 5px; margin-top: 10px; margin-bottom: 10px; }
+.btn { -moz-transition: all 0.2s linear; -o-transition: all 0.2s linear; -webkit-transition: all 0.2s linear; transition: all 0.2s linear; display: inline-block; padding: 8px 15px; border: none; border-radius: 0; text-shadow: none; box-shadow: none; color: #fff !important; font-family: "Comfortaa", arial, serif; font-weight: 300; cursor: pointer; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; font-size: 18px; color: #2c2e32; text-decoration: none !important; outline: none !important; -webkit-backface-visibility: hidden; background: #1f1f1f; margin-right: 5px; margin-top: 10px; margin-bottom: 10px; }
 .btn:hover, .btn:active { opacity: 0.7; filter: alpha(opacity=70); }
 .btn.btn-link { background: transparent; box-shadow: none; text-shadow: none; color: #5b7fa6 !important; font-weight: normal; border: none; padding: 0; }
 .btn.btn-link:hover { color: #486686 !important; text-decoration: underline !important; }
@@ -80,9 +80,9 @@ textarea { height: auto; }
 
 .black { color: #141414; }
 
-.grey { color: #444444; }
+.grey { color: #444; }
 
-.white { color: white; }
+.white { color: #fff; }
 
 .align-left { text-align: left !important; }
 
@@ -233,12 +233,12 @@ textarea { height: auto; }
 
 .todo { color: red; font-weight: bold; }
 
-#section-header { position: fixed; left: 0; right: 0; top: 0; height: 50px; background: #1f1f1f; color: white; font-size: 16px; letter-spacing: 0; z-index: 50; }
+#section-header { position: fixed; left: 0; right: 0; top: 0; height: 50px; background: #1f1f1f; color: #fff; font-size: 16px; letter-spacing: 0; z-index: 50; }
 
 .logo { padding: 17px 15px; float: left; background: #141414; }
 .logo img { display: block; }
 
-.fork-on-github { margin-left: 15px; padding: 0 15px; color: white !important; text-decoration: none !important; float: right; text-decoration: none; line-height: 50px; background: #1f1f1f; }
+.fork-on-github { margin-left: 15px; padding: 0 15px; color: #fff !important; text-decoration: none !important; float: right; text-decoration: none; line-height: 50px; background: #1f1f1f; }
 .fork-on-github:hover { padding-top: 10px; background: #141414; }
 
 .icon-fork { display: inline-block; width: 11px; height: 15px; background: url(../images/icon_fork.png) no-repeat 0 0; }
@@ -248,8 +248,8 @@ textarea { height: auto; }
 .menu { list-style-type: none; list-style-image: none; margin: 0; padding: 0; float: right; }
 .menu li { list-style-type: none; list-style-image: none; margin: 0; padding: 0; }
 .menu li { float: left; }
-.menu li a { padding: 0 15px; line-height: 50px; color: white; text-decoration: none !important; display: block; background: #1f1f1f; }
-.menu li a:hover { padding-top: 10px; background: #141414; color: white; }
+.menu li a { padding: 0 15px; line-height: 50px; color: #fff; text-decoration: none !important; display: block; background: #1f1f1f; }
+.menu li a:hover { padding-top: 10px; background: #141414; color: #fff; }
 
 .container { max-width: 940px; margin-left: auto; margin-right: auto; position: relative; }
 
@@ -257,9 +257,9 @@ textarea { height: auto; }
 
 .section-inner > .container { position: static; }
 
-.section.section-odd { background: white; }
+.section.section-odd { background: #fff; }
 .section.section-even { background: #f3f3f3; }
-.section.section-even code, .section.section-even pre { background: white; }
+.section.section-even code, .section.section-even pre { background: #fff; }
 .section .section-title { padding-left: 28px; border-left: 2px solid #a3a3a3; margin-bottom: 30px; padding-top: 15px; padding-bottom: 15px; line-height: 40px; }
 
 #options { padding-bottom: 30px; }
@@ -276,7 +276,7 @@ textarea { height: auto; }
 #container-promo .tile-item { width: 5%; padding-bottom: 5%; padding-bottom: 5%; }
 
 .tile-caption { z-index: 25; position: absolute; bottom: 0; left: 0; right: 0; }
-.tile-caption .tile-caption-inner { float: left; padding: 15px 30px; background-color: white; background-color: rgba(255, 255, 255, 0.8); padding-left: 10029px; margin-left: -9999px; }
+.tile-caption .tile-caption-inner { float: left; padding: 15px 30px; background-color: #fff; background-color: rgba(255, 255, 255, 0.8); padding-left: 10029px; margin-left: -9999px; }
 .tile-caption .tile-caption-inner * { margin: 0; }
 .tile-caption .tile-caption-inner h1 { font-size: 32px; }
 .tile-caption .tile-caption-inner h2 { font-family: "Open Sans", arial, serif; font-size: 18px; font-weight: 300; }
@@ -292,12 +292,16 @@ code { padding: 2px 5px; }
 #main-container { padding-top: 50px; }
 
 .block-container { margin: 0; width: 300px; border: 1px solid #ddd; padding: 1px; }
-.block-container .tile-item { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; width: 33.3%; padding-bottom: 33.3%; border: 1px solid #eee; }
+.block-container .tile-item { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; width: 33.3%; padding-bottom: 33.3%; border: 1px solid #eee; }
 
 .example-item { overflow: hidden; height: 100%; clear: both; margin-bottom: 30px; padding-top: 30px; border-top: 1px solid #f3f3f3; }
 .example-item.first, .example-item:first-child { border-top: none; padding-top: 0; }
 .example-item h3 { padding-left: 30px; margin-bottom: 30px; }
 .example-item h3 span { color: #a3a3a3; padding-right: 15px; }
+
+.custom-container { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; font-size: 12px; line-height: normal; padding: 5px; top: 0; left: 0; bottom: 0; right: 0; position: absolute; background: #fff; }
+.custom-container:nth-child(odd) { background: #fff; }
+.custom-container:nth-child(even) { background: #f3f3f3; }
 
 .example-wide .example-left { margin-right: 450px; }
 
@@ -305,7 +309,7 @@ code { padding: 2px 5px; }
 
 .example-right { float: right; }
 
-.tile-stamp { width: 49.5%; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; padding-bottom: 24.5%; margin: 1px; background: #f8f8f8; border: 1px solid #ccc; text-align: center; position: relative; float: left; overflow: hidden; }
+.tile-stamp { width: 49.5%; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; padding-bottom: 24.5%; margin: 1px; background: #f8f8f8; border: 1px solid #ccc; text-align: center; position: relative; float: left; overflow: hidden; }
 
 .tile-stamp > div { position: absolute; left: 10px; right: 10px; top: 10px; font-size: 12px; }
 .tile-stamp > div h4 { font-size: 16px; margin: 10px 0; }
@@ -315,5 +319,5 @@ code { padding: 2px 5px; }
 
 #container-animate .tile-item { width: 25%; padding-bottom: 25%; }
 
-#section-footer { background: #1f1f1f; font-size: 16px; color: white; text-align: center; padding: 20px 0; }
-#section-footer a { color: white !important; }
+#section-footer { background: #1f1f1f; font-size: 16px; color: #fff; text-align: center; padding: 20px 0; }
+#section-footer a { color: #fff !important; }

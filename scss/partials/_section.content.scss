@@ -191,7 +191,24 @@ code {
   }
 }
 
-
+.custom-container {
+  @include box-sizing(border-box);
+  font-size: 12px;
+  line-height: normal;
+  padding: 5px;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  background: $color-white;
+  &:nth-child(odd) {
+    background: $color-white;
+  }
+  &:nth-child(even) {
+    background: $color-grey-light;
+  }
+}
 
 .example-wide {
   .example-left {

@@ -41,6 +41,11 @@
       });
 
       $(window).load(function () {
+
+        $('#container-custom').tileSlideshow({
+          innerSelector: '.custom-container'
+        });
+
         $('#container-promo').tileSlideshow({
           animation:'randomMove',
           animationSpeed:1000,
@@ -1141,6 +1146,178 @@ $('#btn-stop').on('click', function(){
 });</pre>
   </div>
 </div>
+
+<div class="example-item">
+  <div class="example-right">
+    <div class="tile-container block-container" id="container-custom">
+      <div class="tile-item">
+        <div class="custom-container">
+          Сustom text
+        </div>
+        <div class="custom-container">
+          Some custom text
+        </div>
+        <div class="custom-container">
+          Another custom text
+        </div>
+        <div class="custom-container">
+          More custom text
+        </div>
+        <div class="custom-container">
+          Сustom text
+        </div>
+      </div>
+      <div class="tile-item">
+        <div class="custom-container">
+          Some custom text
+        </div>
+        <div class="custom-container">
+          Another custom text
+        </div>
+        <div class="custom-container">
+          Сustom text
+        </div>
+        <div class="custom-container">
+          More custom text
+        </div>
+        <div class="custom-container">
+          Сustom text
+        </div>
+      </div>
+      <div class="tile-item">
+        <div class="custom-container">
+          Some custom text
+        </div>
+        <div class="custom-container">
+          Another custom text
+        </div>
+        <div class="custom-container">
+          More custom text
+        </div>
+        <div class="custom-container">
+          Сustom text
+        </div>
+        <div class="custom-container">
+          Сustom text
+        </div>
+      </div>
+      <div class="tile-item">
+        <div class="custom-container">
+          Some custom text
+        </div>
+        <div class="custom-container">
+          Another custom text
+        </div>
+        <div class="custom-container">
+          Сustom text
+        </div>
+        <div class="custom-container">
+          More custom text
+        </div>
+        <div class="custom-container">
+          Сustom text
+        </div>
+      </div>
+      <div class="tile-item">
+        <div class="custom-container">
+          Some custom text
+        </div>
+        <div class="custom-container">
+          Another custom text
+        </div>
+        <div class="custom-container">
+          More custom text
+        </div>
+        <div class="custom-container">
+          Сustom text
+        </div>
+        <div class="custom-container">
+          Сustom text
+        </div>
+      </div>
+      <div class="tile-item">
+        <div class="custom-container">
+          Сustom text
+        </div>
+        <div class="custom-container">
+          Some custom text
+        </div>
+        <div class="custom-container">
+          Another custom text
+        </div>
+        <div class="custom-container">
+          More custom text
+        </div>
+        <div class="custom-container">
+          Сustom text
+        </div>
+      </div>
+      <div class="tile-item">
+        <div class="custom-container">
+          Some custom text
+        </div>
+        <div class="custom-container">
+          Another custom text
+        </div>
+        <div class="custom-container">
+          Сustom text
+        </div>
+        <div class="custom-container">
+          More custom text
+        </div>
+        <div class="custom-container">
+          Сustom text
+        </div>
+      </div>
+      <div class="tile-item">
+        <div class="custom-container">
+          Some custom text
+        </div>
+        <div class="custom-container">
+          Another custom text
+        </div>
+        <div class="custom-container">
+          More custom text
+        </div>
+        <div class="custom-container">
+          Сustom text
+        </div>
+        <div class="custom-container">
+          Сustom text
+        </div>
+      </div>
+      <div class="tile-item">
+        <div class="custom-container">
+          Some custom text
+        </div>
+        <div class="custom-container">
+          Another custom text
+        </div>
+        <div class="custom-container">
+          Сustom text
+        </div>
+        <div class="custom-container">
+          More custom text
+        </div>
+        <div class="custom-container">
+          Сustom text
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="example-left">
+    <h3><span>4.</span> Custom content inside slideshow</h3>
+
+    <p>Use whatever tags you want for slideshow. Simply change option <code>innerSelector</code> and write any class or tag you want.</p>
+    <p>Don't forget to add CSS about your new selector because all items must be placed one under another (use <code>position: absolute</code> in your CSS)</p>
+
+            <pre>
+$('#container-custom').tileSlideshow({
+  innerSelector: '.custom-container'
+});</pre>
+  </div>
+</div>
+
 </div>
 </section>
 <section class="section section-even" id="browser">
