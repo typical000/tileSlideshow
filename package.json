@@ -1,5 +1,5 @@
 {
-    "name" : "tileSlideshow",
+    "name" : "tileslideshow",
     "version" : "0.1.0",
     "description" : "Simple jQuery-based random slideshow plugin",
     "main" : "tileSlideshow.js",
