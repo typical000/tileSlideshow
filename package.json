@@ -1,0 +1,20 @@
+{
+    "name" : "tileSlideshow",
+    "version" : "0.1.0",
+    "description" : "Simple jQuery-based random slideshow plugin",
+    "main" : "tileSlideshow.js",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/typical000/tileSlideshow.git"
+    },
+    "author" : "Pavel Davydov",
+    "license" : "MIT",
+    "bugs" : {
+        "url" : "https://github.com/typical000/tileSlideshow/issues"
+    },
+    "homepage" : "https://github.com/typical000/tileSlideshow",
+    "dependencies" : {
+        "jquery": ">= 1.7"
+    }
+
+}

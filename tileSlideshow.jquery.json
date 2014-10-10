@@ -3,6 +3,7 @@
     "title" : "tileSlideshow",
     "version" : "0.1.0",
     "keywords" : [
+        "tileSlideshow",
         "tile",
         "slider",
         "slideshow",
@@ -17,6 +18,13 @@
             "type" : "MIT",
             "url" : "http://opensource.org/licenses/MIT"
         }
+    ],
+    "keywords" : [
+        "tileSlideshow",
+        "tile",
+        "slider",
+        "slideshow",
+        "animation"
     ],
     "bugs" : "https://github.com/typical000/tileSlideshow/issues",
     "homepage" : "https://github.com/typical000/tileSlideshow",
