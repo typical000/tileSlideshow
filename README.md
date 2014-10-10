@@ -96,7 +96,7 @@ $('.tile-container').tileSlideshow('destroy');
 Browser support
 ---------------
 All modern versions of Firefox, Chrome, Safari, iOS, Android, and Internet Explorer have been tested and are supported.
-It works fine in IE8 and IE7 too. But if you support this old browsers your soul will burn in hell :)
+It works fine in IE8 and IE7 too. But if you support these old browsers your soul will burn in hell :)
 
 License
 -------
